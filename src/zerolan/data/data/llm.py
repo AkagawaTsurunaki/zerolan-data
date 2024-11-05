@@ -1,11 +1,10 @@
 from dataclasses import dataclass
-from enum import Enum
 from dataclasses_json import dataclass_json
 
 from zerolan.data.abs_data import AbstractModelQuery, AbstractModelPrediction
 
 
-class RoleEnum(Enum):
+class RoleEnum:
     system = "system"
     user = "user"
     assistant = "assistant"
@@ -14,7 +13,7 @@ class RoleEnum(Enum):
 @dataclass_json
 @dataclass
 class Conversation:
-    role: RoleEnum
+    role: str
     content: str
     metadata: str | None = None
 
