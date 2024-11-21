@@ -8,6 +8,7 @@ class RoleEnum:
     system = "system"
     user = "user"
     assistant = "assistant"
+    function = "function"
 
 
 @dataclass_json
