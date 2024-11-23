@@ -1,22 +1,19 @@
-from dataclasses import dataclass
 from enum import Enum
 
-from dataclasses_json import dataclass_json
+from pydantic import BaseModel
 
-class AppStatusEnum(Enum):
+
+class AppStatusEnum(str, Enum):
     RUNNING = "running"
     STOPPED = "stopped"
     INITIALIZING = "initializing"
     UNKNOWN = "unknown"
 
 
-@dataclass_json
-@dataclass
-class ServiceState:
-    state: AppStatusEnum
+class ServiceState(BaseModel):
+    state: str
     msg: str
 
 
-@dataclass
-class AppStatus:
+class AppStatus(BaseModel):
     status: str
