@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from zerolan.data.pipeline.abs_data import AbstractModelQuery, AbstractModelPrediction
 
 
-class RoleEnum(BaseModel):
+class RoleEnum:
     """
     The role that made this conversation.
     """
