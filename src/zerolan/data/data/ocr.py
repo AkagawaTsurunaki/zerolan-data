@@ -1,48 +1,65 @@
-from dataclasses import dataclass
 from typing import List
 
-from dataclasses_json import dataclass_json
-
+from pydantic import BaseModel
 from zerolan.data.abs_data import AbsractImageModelQuery, AbstractModelPrediction
 
 
-@dataclass_json
-@dataclass
 class OCRQuery(AbsractImageModelQuery):
+    """
+    Query for Optical Character Recognition (OCR) model.
+
+    This class inherits from AbsractImageModelQuery and doesn't have any specific attributes defined.
+    """
     pass
 
 
-@dataclass_json
-@dataclass
-class Vector2D:
+class Vector2D(BaseModel):
+    """
+    Represents a two-dimensional vector.
+
+    Attributes:
+        x: The x-coordinate of the vector.
+        y: The y-coordinate of the vector.
+    """
     x: float
     y: float
 
 
-@dataclass_json
-@dataclass
-class Position:
-    lu: Vector2D  # Left up
-    ru: Vector2D  # Right up
-    rd: Vector2D  # Right down
-    ld: Vector2D  # Left down
+class Position(BaseModel):
+    """
+    Represents the position of a region in an image.
+
+    Attributes:
+        lu: Left-up corner coordinates.
+        ru: Right-up corner coordinates.
+        rd: Right-down corner coordinates.
+        ld: Left-down corner coordinates.
+    """
+    lu: Vector2D
+    ru: Vector2D
+    rd: Vector2D
+    ld: Vector2D
 
 
-@dataclass_json
-@dataclass
-class RegionResult:
+class RegionResult(BaseModel):
+    """
+    Represents the result for a specific region in OCR.
+
+    Attributes:
+        position: The position of the detected region.
+        content: The transcribed text from the detected region.
+        confidence: The confidence level of the transcription.
+    """
     position: Position
     content: str
     confidence: float
 
 
-@dataclass_json
-@dataclass
 class OCRPrediction(AbstractModelPrediction):
-    region_results: List[RegionResult]
+    """
+    Prediction result for Optical Character Recognition model.
 
-    def unfold_as_str(self) -> str:
-        result = ""
-        for region_result in self.region_results:
-            result += region_result.content + "\n"
-        return result
+    Attributes:
+        region_results: List of results for different regions.
+    """
+    region_results: List[RegionResult]
