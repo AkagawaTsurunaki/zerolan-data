@@ -1,18 +1,15 @@
 from dataclasses import dataclass
 
 from dataclasses_json import dataclass_json
+from pydantic import BaseModel
 
 
-@dataclass_json
-@dataclass
-class AbstractModelQuery:
-    ...
+class AbstractModelQuery(BaseModel):
+    id: str
 
 
-@dataclass_json
-@dataclass
-class AbstractModelPrediction:
-    ...
+class AbstractModelPrediction(BaseModel):
+    id: str
 
 
 @dataclass_json
