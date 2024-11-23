@@ -1,22 +1,33 @@
-from dataclasses import dataclass
-
-from dataclasses_json import dataclass_json
-
 from zerolan.data.abs_data import AbstractModelQuery, AbstractModelPrediction
 
 
-@dataclass_json
-@dataclass
-class ASRModelQuery(AbstractModelQuery):
+class ASRQuery(AbstractModelQuery):
+    """
+    Represents an Auto-Speech-Recognition (ASR) query.
+
+    Attributes:
+        audio_path: Path to the audio file.
+        media_type: Type of media (default: 'wav').
+        sample_rate: Sample rate of the audio (default: 16000 Hz).
+        channels: Number of audio channels (default: 1).
+    """
     audio_path: str
     media_type: str = 'wav'
     sample_rate: int = 16000
     channels: int = 1
 
 
-@dataclass_json
-@dataclass
-class ASRModelStreamQuery(AbstractModelQuery):
+class ASRStreamQuery(AbstractModelQuery):
+    """
+    Represents an Auto-Speech-Recognition (ASR) stream query.
+
+    Attributes:
+        is_final (bool): Flag indicating if this is the final chunk of audio.
+        audio_data (bytes): Raw audio data bytes.
+        media_type (str): Type of media (default: 'wav').
+        sample_rate (int): Sample rate of the audio (default: 16000 Hz).
+        channels (int): Number of audio channels (default: 1).
+    """
     is_final: bool
     audio_data: bytes
     media_type: str = 'wav'
@@ -24,10 +35,11 @@ class ASRModelStreamQuery(AbstractModelQuery):
     channels: int = 1
 
 
-@dataclass_json
-@dataclass
-class ASRModelPrediction(AbstractModelPrediction):
-    transcript: str
+class ASRPrediction(AbstractModelPrediction):
+    """
+    Represents an Auto-Speech-Recognition (ASR) result.
 
-    def __str__(self):
-        return self.transcript
+    Attributes:
+        transcript: Transcribed text from the speech.
+    """
+    transcript: str
