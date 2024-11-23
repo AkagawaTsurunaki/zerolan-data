@@ -1,33 +1,52 @@
-from dataclasses import dataclass
-from dataclasses_json import dataclass_json
+from pydantic import BaseModel
 
 from zerolan.data.abs_data import AbstractModelQuery, AbstractModelPrediction
 
 
-class RoleEnum:
+class RoleEnum(BaseModel):
+    """
+    The role that made this conversation.
+    """
     system = "system"
     user = "user"
     assistant = "assistant"
     function = "function"
 
 
-@dataclass_json
-@dataclass
-class Conversation:
+class Conversation(BaseModel):
+    """
+    Message containing information about a conversation.
+    Like Langchain Message.
+
+    Attributes:
+        role: Who made this conversation.
+        content: The content of this conversation.
+        metadata: The metadata of this conversation.
+    """
     role: str
     content: str
     metadata: str | None = None
 
 
-@dataclass_json
-@dataclass
 class LLMQuery(AbstractModelQuery):
+    """
+    Query for Large Language Models.
+
+    Attributes:
+        text: The content of the query.
+        history: Previous conversations.
+    """
     text: str
     history: list[Conversation]
 
 
-@dataclass_json
-@dataclass
 class LLMPrediction(AbstractModelPrediction):
+    """
+    Prediction for Large Language Models.
+
+    Attributes:
+        response: The content of the result.
+        history: Previous conversations.
+    """
     response: str
     history: list[Conversation]
