@@ -1,4 +1,3 @@
-from pydantic import BaseModel
 from zerolan.data.abs_data import AbstractModelQuery, AbstractModelPrediction
 
 
@@ -12,12 +11,14 @@ class TTSQuery(AbstractModelQuery):
         refer_wav_path: Path to the reference WAV file.
         prompt_text: Text for the reference WAV file.
         prompt_language: The language of the prompt text.
+        cut_punc: Use to split the sentences.
     """
     text: str
     text_language: str
     refer_wav_path: str
     prompt_text: str
     prompt_language: str
+    cut_punc: str = "，。"
 
 
 class TTSPrediction(AbstractModelPrediction):
@@ -29,7 +30,3 @@ class TTSPrediction(AbstractModelPrediction):
     """
     wave_data: bytes
     audio_type: str = "wav"
-
-
-class GPTSoVITS_TTSQuery(BaseModel):
-    cut_punc: str = "，。"
