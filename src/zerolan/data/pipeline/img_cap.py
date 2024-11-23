@@ -1,4 +1,4 @@
-from zerolan.data.abs_data import AbsractImageModelQuery, AbstractModelPrediction
+from zerolan.data.pipeline.abs_data import AbsractImageModelQuery, AbstractModelPrediction
 
 
 class ImgCapQuery(AbsractImageModelQuery):

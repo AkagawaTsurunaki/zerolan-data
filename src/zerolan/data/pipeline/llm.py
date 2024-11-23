@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from zerolan.data.abs_data import AbstractModelQuery, AbstractModelPrediction
+from zerolan.data.pipeline.abs_data import AbstractModelQuery, AbstractModelPrediction
 
 
 class RoleEnum(BaseModel):

@@ -1,7 +1,7 @@
 from typing import List
 
 from pydantic import BaseModel
-from zerolan.data.abs_data import AbsractImageModelQuery, AbstractModelPrediction
+from zerolan.data.pipeline.abs_data import AbsractImageModelQuery, AbstractModelPrediction
 
 
 class OCRQuery(AbsractImageModelQuery):

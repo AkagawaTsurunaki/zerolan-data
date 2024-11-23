@@ -1,4 +1,4 @@
-from zerolan.data.abs_data import AbstractModelQuery, AbstractModelPrediction
+from zerolan.data.pipeline.abs_data import AbstractModelQuery, AbstractModelPrediction
 
 
 class VidCapQuery(AbstractModelQuery):
