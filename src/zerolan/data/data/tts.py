@@ -1,3 +1,5 @@
+from typing import Optional
+
 from zerolan.data.abs_data import AbstractModelQuery, AbstractModelPrediction
 
 
@@ -18,7 +20,7 @@ class TTSQuery(AbstractModelQuery):
     refer_wav_path: str
     prompt_text: str
     prompt_language: str
-    cut_punc: str = "，。"
+    cut_punc: Optional[str] = "，。"
 
 
 class TTSPrediction(AbstractModelPrediction):
@@ -29,4 +31,4 @@ class TTSPrediction(AbstractModelPrediction):
         wave_data: The raw audio data produced by the TTS model.
     """
     wave_data: bytes
-    audio_type: str = "wav"
+    audio_type: str
