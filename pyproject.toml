@@ -8,7 +8,6 @@ packages = [{include = "zerolan", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-dataclasses-json = "^0.6.7"
 pydantic = "^2.10.1"
 
 
