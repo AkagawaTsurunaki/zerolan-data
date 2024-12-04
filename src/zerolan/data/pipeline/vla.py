@@ -20,11 +20,11 @@ class WebAction(BaseModel):
 
 class ShowUiQuery(AbsractImageModelQuery):
     query: str
-    action: PhoneAction | WebAction | None
+    action: PhoneAction | WebAction | None = None
     system_prompt: str | None = None
 
 
 class ShowUiPrediction(AbstractModelPrediction):
     action: Literal['CLICK', 'INPUT', 'SELECT', 'HOVER',
-    'ANSWER', 'ENTER', 'SCROLL', 'SELECT_TEXT', 'COPY']
+    'ANSWER', 'ENTER', 'SCROLL', 'SELECT_TEXT', 'COPY'] = 'CLICK'
     click_xy: list[float]
