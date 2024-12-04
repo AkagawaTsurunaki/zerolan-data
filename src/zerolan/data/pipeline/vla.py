@@ -9,7 +9,7 @@ class PhoneAction(BaseModel):
     env: str = "phone"
     action: Literal['INPUT', 'SWIPE', 'TAP', 'ANSWER', 'ENTER']
     value: str | None = None
-    position: list[float] | None = None
+    position: List[float] | None = None
 
 
 class WebAction(BaseModel):
@@ -17,13 +17,14 @@ class WebAction(BaseModel):
     action: Literal['CLICK', 'INPUT', 'SELECT', 'HOVER',
     'ANSWER', 'ENTER', 'SCROLL', 'SELECT_TEXT', 'COPY']
     value: str | None = None
-    position: list[float] | None = None
+    position: List[float] | None = None
 
 
 class ShowUiQuery(AbsractImageModelQuery):
     query: str
-    action: PhoneAction | WebAction | None = None
-    system_prompt: str | None = None
+    env: Literal["web", "phone"] | None = None
+    system_prompt: str | None = None  # None for default system prompt
+    history: List[WebAction | PhoneAction] = []
 
 
 class ShowUiPrediction(AbstractModelPrediction):
