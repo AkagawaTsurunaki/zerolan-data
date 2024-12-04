@@ -1,4 +1,4 @@
-from typing import Literal
+from typing import Literal, List
 
 from pydantic import BaseModel
 
@@ -9,6 +9,7 @@ class PhoneAction(BaseModel):
     env: str = "phone"
     action: Literal['INPUT', 'SWIPE', 'TAP', 'ANSWER', 'ENTER']
     value: str | None = None
+    position: list[float] | None = None
 
 
 class WebAction(BaseModel):
@@ -16,6 +17,7 @@ class WebAction(BaseModel):
     action: Literal['CLICK', 'INPUT', 'SELECT', 'HOVER',
     'ANSWER', 'ENTER', 'SCROLL', 'SELECT_TEXT', 'COPY']
     value: str | None = None
+    position: list[float] | None = None
 
 
 class ShowUiQuery(AbsractImageModelQuery):
@@ -25,6 +27,4 @@ class ShowUiQuery(AbsractImageModelQuery):
 
 
 class ShowUiPrediction(AbstractModelPrediction):
-    action: Literal['CLICK', 'INPUT', 'SELECT', 'HOVER',
-    'ANSWER', 'ENTER', 'SCROLL', 'SELECT_TEXT', 'COPY'] = 'CLICK'
-    click_xy: list[float]
+    actions: List[WebAction | PhoneAction]
