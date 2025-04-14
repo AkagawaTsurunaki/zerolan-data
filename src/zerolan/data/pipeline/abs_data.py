@@ -34,6 +34,6 @@ class AbsractImageModelQuery(AbstractModelQuery):
     This class extends the `AbstractModelQuery` class and adds an `img_path` attribute to specify the image path. The image path can be a local file path or a remote file path.
     """
     img_path: str | None = Field(default=None, description="Image path. \n"
-                                                           "[!Note]\n"
+                                                           "Note:\n"
                                                            "1. If `image_path` exists in your local machine, will automatically read as binary stream.\n"
                                                            "2. If `image_path` dose not exist in your local machine, then we assume that it must exists in your remote machine (server, etc.)\n")

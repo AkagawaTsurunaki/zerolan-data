@@ -1,17 +1,11 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class TTSPrompt(BaseModel):
     """
     Represents a Text-to-Speech (TTS) prompt.
-
-    Attributes:
-        audio_path: Path to the audio file.
-        lang: Language enum value for the TTS output.
-        sentiment: Sentiment tag of the input text.
-        prompt_text: The text to be converted to speech.
     """
-    audio_path: str
-    lang: str  # Use enumerator.Language
-    sentiment: str
-    prompt_text: str
+    audio_path: str = Field(..., description="Path to the audio file.")
+    lang: str = Field(..., description="Language enum value for the TTS output. Use enumerator `Language`.")
+    sentiment: str = Field(..., description="Sentiment tag of the input text.")
+    prompt_text: str = Field(..., description="Text to be converted to speech.")
