@@ -1,9 +1,10 @@
-from pydantic import BaseModel
+from enum import Enum
 
+from pydantic import BaseModel, Field
 from zerolan.data.pipeline.abs_data import AbstractModelQuery, AbstractModelPrediction
 
 
-class RoleEnum:
+class RoleEnum(str, Enum):
     """
     The role that made this conversation.
     """
@@ -17,36 +18,23 @@ class Conversation(BaseModel):
     """
     Message containing information about a conversation.
     Like Langchain Message.
-
-    Attributes:
-        role: Who made this conversation.
-        content: The content of this conversation.
-        metadata: The metadata of this conversation.
     """
-    role: str
-    content: str
-    metadata: str | None = None
+    role: str = Field(default=RoleEnum.user, description="The role of this conversation. See `RoleEnum`.")
+    content: str = Field(default=None, description="The content of this conversation.")
+    metadata: str | None = Field(default=None, description="The metadata of this conversation.")
 
 
 class LLMQuery(AbstractModelQuery):
     """
     Query for Large Language Models.
-
-    Attributes:
-        text: The content of the query.
-        history: Previous conversations.
     """
-    text: str
-    history: list[Conversation]
+    text: str = Field(default=None, description="The content of the query.")
+    history: list[Conversation] = Field(default_factory=list, description="The history of previous conversations.")
 
 
 class LLMPrediction(AbstractModelPrediction):
     """
     Prediction for Large Language Models.
-
-    Attributes:
-        response: The content of the result.
-        history: Previous conversations.
     """
-    response: str
-    history: list[Conversation]
+    response: str = Field(default=None, description="The content of the result.")
+    history: list[Conversation] = Field(default_factory=list, description="The history of previous conversations. The current response included.")

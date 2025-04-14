@@ -1,45 +1,30 @@
+from pydantic import Field
 from zerolan.data.pipeline.abs_data import AbstractModelQuery, AbstractModelPrediction
 
 
 class ASRQuery(AbstractModelQuery):
     """
     Represents an Auto-Speech-Recognition (ASR) query.
-
-    Attributes:
-        audio_path: Path to the audio file.
-        media_type: Type of media (default: 'wav').
-        sample_rate: Sample rate of the audio (default: 16000 Hz).
-        channels: Number of audio channels (default: 1).
     """
-    audio_path: str
-    media_type: str = 'wav'
-    sample_rate: int = 16000
-    channels: int = 1
+    audio_path: str = Field(default=None, description="Path to the audio file.")
+    media_type: str = Field(default='wav', description="Format of audio data.")
+    sample_rate: int = Field(default=16000, description="Sample rate of the audio.")
+    channels: int = Field(default=1, description="Number of audio channels.")
 
 
 class ASRStreamQuery(AbstractModelQuery):
     """
     Represents an Auto-Speech-Recognition (ASR) stream query.
-
-    Attributes:
-        is_final (bool): Flag indicating if this is the final chunk of audio.
-        audio_data (bytes): Raw audio data bytes.
-        media_type (str): Type of media (default: 'wav').
-        sample_rate (int): Sample rate of the audio (default: 16000 Hz).
-        channels (int): Number of audio channels (default: 1).
     """
-    is_final: bool
-    audio_data: bytes
-    media_type: str = 'wav'
-    sample_rate: int = 16000
-    channels: int = 1
+    is_final: bool = Field(default=False, description="Flag indicating if this is the final chunk of audio.")
+    audio_data: bytes = Field(default=None, description="Raw audio data bytes.")
+    media_type: str = Field(default='wav', description="Format of audio data.")
+    sample_rate: int = Field(default=16000, description="Sample rate of the audio.")
+    channels: int = Field(default=1, description="Number of audio channels.")
 
 
 class ASRPrediction(AbstractModelPrediction):
     """
     Represents an Auto-Speech-Recognition (ASR) result.
-
-    Attributes:
-        transcript: Transcribed text from the speech.
     """
-    transcript: str
+    transcript: str = Field(default=None, description="Transcribed text from the speech.")

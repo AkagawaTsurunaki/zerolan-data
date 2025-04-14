@@ -1,6 +1,6 @@
 from typing import List
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from zerolan.data.pipeline.abs_data import AbsractImageModelQuery, AbstractModelPrediction
 
 
@@ -16,50 +16,32 @@ class OCRQuery(AbsractImageModelQuery):
 class Vector2D(BaseModel):
     """
     Represents a two-dimensional vector.
-
-    Attributes:
-        x: The x-coordinate of the vector.
-        y: The y-coordinate of the vector.
     """
-    x: float
-    y: float
+    x: float = Field(..., description="The x-coordinate of the vector.")
+    y: float = Field(..., description="The y-coordinate of the vector.")
 
 
 class Position(BaseModel):
     """
     Represents the position of a region in an image.
-
-    Attributes:
-        lu: Left-up corner coordinates.
-        ru: Right-up corner coordinates.
-        rd: Right-down corner coordinates.
-        ld: Left-down corner coordinates.
     """
-    lu: Vector2D
-    ru: Vector2D
-    rd: Vector2D
-    ld: Vector2D
+    lu: Vector2D = Field(..., description="Left-up corner coordinates.")
+    ru: Vector2D = Field(..., description="Right-up corner coordinates.")
+    rd: Vector2D = Field(..., description="Right-down corner coordinates.")
+    ld: Vector2D = Field(..., description="Left-down corner coordinates.")
 
 
 class RegionResult(BaseModel):
     """
     Represents the result for a specific region in OCR.
-
-    Attributes:
-        position: The position of the detected region.
-        content: The transcribed text from the detected region.
-        confidence: The confidence level of the transcription.
     """
-    position: Position
-    content: str
-    confidence: float
+    position: Position = Field(..., description="The position of the detected region.")
+    content: str = Field(..., description="The transcribed text from the detected region.")
+    confidence: float = Field(..., description="The confidence level of the transcription.")
 
 
 class OCRPrediction(AbstractModelPrediction):
     """
     Prediction result for Optical Character Recognition model.
-
-    Attributes:
-        region_results: List of results for different regions.
     """
-    region_results: List[RegionResult]
+    region_results: List[RegionResult] = Field(..., description="List of results for different regions.")
