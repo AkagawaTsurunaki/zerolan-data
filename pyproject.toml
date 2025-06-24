@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "zerolan-data"
-version = "1.4.0"
+version = "1.5.0"
 description = ""
 authors = ["AkagawaTsurunaki <AkagawaTsurunaki@outlook.com>"]
 readme = "README.md"
@@ -8,7 +8,8 @@ packages = [{include = "zerolan", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pydantic = "^2.10.1"
+# If pydantic >= 3.0, document generator will not work!
+pydantic = "^2.10.1,<3.0"
 
 
 [build-system]
