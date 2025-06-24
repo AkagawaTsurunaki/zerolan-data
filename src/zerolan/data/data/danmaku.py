@@ -17,3 +17,10 @@ class SuperChat(Danmaku):
     Represents a Super Chat message from live-streaming.
     """
     money: str = Field(..., description="The money sent by the user (depending on the platform).")
+
+
+class Gift(BaseModel):
+    uid: str = Field(description="Sender ID.")
+    username: str = Field(description="Sender username.")
+    gift_name: str = Field(description="Gift name.")
+    num: int = Field(description="Number of gifts.")
