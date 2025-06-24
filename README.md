@@ -13,6 +13,8 @@ The documentation is automatically generated and is consistent with the comments
 The project structure is as follows:
 
 ```
+docs
+└─ doc_en.md                # Documentation for zerolan-data.
 src
 └─ zerolan
    └─ data
@@ -32,7 +34,7 @@ src
       │  ├─ vla.py          # Vision language action model
       │  └─ __init__.py
       └─ data
-         ├─ danmaku.py      # Damaku for Bilibili, YouTube and Twitch
+         ├─ danmaku.py      # Live-streaming data for Bilibili, YouTube and Twitch
          ├─ prompt.py       # TTS prompt
          ├─ state.py        # Service state
          └─ __init__.py
