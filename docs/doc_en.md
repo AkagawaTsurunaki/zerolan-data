@@ -1,12 +1,12 @@
 # Zerolan Data Documentation
 
-Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14T13:59:47.021933`
+Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-06-24T17:32:45.146437`.
 
 ## zerolan.data.data
 
 ### Danmaku
 
-*In module `zerolan.data.data.danmaku`*
+*In module `zerolan.data.data.danmaku`*.
 
 
     Represents a danmaku entity from live-streaming.
@@ -20,9 +20,21 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 |`ts`|`<class 'int'>`|The timestamp of when the danmaku was sent.|
 
 
+### Gift
+
+*In module `zerolan.data.data.danmaku`*.
+
+| Field Name | Type | Description|
+|--|--|--|
+|`uid`|`<class 'str'>`|Sender ID.|
+|`username`|`<class 'str'>`|Sender username.|
+|`gift_name`|`<class 'str'>`|Gift name.|
+|`num`|`<class 'int'>`|Number of gifts.|
+
+
 ### SuperChat
 
-*In module `zerolan.data.data.danmaku`*
+*In module `zerolan.data.data.danmaku`*.
 
 
     Represents a Super Chat message from live-streaming.
@@ -39,7 +51,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### TTSPrompt
 
-*In module `zerolan.data.data.prompt`*
+*In module `zerolan.data.data.prompt`*.
 
 
     Represents a Text-to-Speech (TTS) prompt.
@@ -55,7 +67,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### AppStatus
 
-*In module `zerolan.data.data.state`*
+*In module `zerolan.data.data.state`*.
 
 
     Represents the status of an application.
@@ -68,7 +80,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### AppStatusEnum
 
-*In module `zerolan.data.data.state`*
+*In module `zerolan.data.data.state`*.
 
 
     Enum representing the possible statuses of an application.
@@ -76,7 +88,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### ServiceState
 
-*In module `zerolan.data.data.state`*
+*In module `zerolan.data.data.state`*.
 
 
     Represents the state of a service.
@@ -92,7 +104,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### AbsractImageModelQuery
 
-*In module `zerolan.data.pipeline.abs_data`*
+*In module `zerolan.data.pipeline.abs_data`*.
 
 
     Abstract class representing an image model query request.
@@ -108,7 +120,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### AbstractModelPrediction
 
-*In module `zerolan.data.pipeline.abs_data`*
+*In module `zerolan.data.pipeline.abs_data`*.
 
 
     Abstract base class representing a model prediction response.
@@ -126,7 +138,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### AbstractModelQuery
 
-*In module `zerolan.data.pipeline.abs_data`*
+*In module `zerolan.data.pipeline.abs_data`*.
 
 
     Abstract base class representing a model query request.
@@ -144,7 +156,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### ASRPrediction
 
-*In module `zerolan.data.pipeline.asr`*
+*In module `zerolan.data.pipeline.asr`*.
 
 
     Represents an Auto-Speech-Recognition (ASR) result.
@@ -158,7 +170,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### ASRQuery
 
-*In module `zerolan.data.pipeline.asr`*
+*In module `zerolan.data.pipeline.asr`*.
 
 
     Represents an Auto-Speech-Recognition (ASR) query.
@@ -175,7 +187,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### ASRStreamQuery
 
-*In module `zerolan.data.pipeline.asr`*
+*In module `zerolan.data.pipeline.asr`*.
 
 
     Represents an Auto-Speech-Recognition (ASR) stream query.
@@ -193,7 +205,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### ImgCapPrediction
 
-*In module `zerolan.data.pipeline.img_cap`*
+*In module `zerolan.data.pipeline.img_cap`*.
 
 
     Prediction for image captioning model.
@@ -208,7 +220,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### ImgCapQuery
 
-*In module `zerolan.data.pipeline.img_cap`*
+*In module `zerolan.data.pipeline.img_cap`*.
 
 
     Query for image captioning model.
@@ -223,7 +235,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### Conversation
 
-*In module `zerolan.data.pipeline.llm`*
+*In module `zerolan.data.pipeline.llm`*.
 
 
     Message containing information about a conversation.
@@ -239,7 +251,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### LLMPrediction
 
-*In module `zerolan.data.pipeline.llm`*
+*In module `zerolan.data.pipeline.llm`*.
 
 
     Prediction for Large Language Models.
@@ -254,7 +266,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### LLMQuery
 
-*In module `zerolan.data.pipeline.llm`*
+*In module `zerolan.data.pipeline.llm`*.
 
 
     Query for Large Language Models.
@@ -269,7 +281,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### RoleEnum
 
-*In module `zerolan.data.pipeline.llm`*
+*In module `zerolan.data.pipeline.llm`*.
 
 
     The role that made this conversation.
@@ -277,7 +289,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### InsertRow
 
-*In module `zerolan.data.pipeline.milvus`*
+*In module `zerolan.data.pipeline.milvus`*.
 
 
     Represents a row to be inserted into a Milvus database table.
@@ -292,7 +304,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### MilvusInsert
 
-*In module `zerolan.data.pipeline.milvus`*
+*In module `zerolan.data.pipeline.milvus`*.
 
 
     Represents an insert operation for a Milvus collection.
@@ -307,7 +319,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### MilvusInsertResult
 
-*In module `zerolan.data.pipeline.milvus`*
+*In module `zerolan.data.pipeline.milvus`*.
 
 
     Represents the result of an insert operation on a Milvus collection.
@@ -321,7 +333,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### MilvusQuery
 
-*In module `zerolan.data.pipeline.milvus`*
+*In module `zerolan.data.pipeline.milvus`*.
 
 
     Represents a query operation on a Milvus collection.
@@ -337,7 +349,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### MilvusQueryResult
 
-*In module `zerolan.data.pipeline.milvus`*
+*In module `zerolan.data.pipeline.milvus`*.
 
 
     Represents the result of a Milvus query operation.
@@ -350,7 +362,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### QueryRow
 
-*In module `zerolan.data.pipeline.milvus`*
+*In module `zerolan.data.pipeline.milvus`*.
 
 
     Represents a row returned by a Milvus query.
@@ -365,7 +377,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### OCRPrediction
 
-*In module `zerolan.data.pipeline.ocr`*
+*In module `zerolan.data.pipeline.ocr`*.
 
 
     Prediction result for Optical Character Recognition model.
@@ -379,7 +391,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### OCRQuery
 
-*In module `zerolan.data.pipeline.ocr`*
+*In module `zerolan.data.pipeline.ocr`*.
 
 
     Query for Optical Character Recognition (OCR) model.
@@ -395,7 +407,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### Position
 
-*In module `zerolan.data.pipeline.ocr`*
+*In module `zerolan.data.pipeline.ocr`*.
 
 
     Represents the position of a region in an image.
@@ -411,7 +423,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### RegionResult
 
-*In module `zerolan.data.pipeline.ocr`*
+*In module `zerolan.data.pipeline.ocr`*.
 
 
     Represents the result for a specific region in OCR.
@@ -426,7 +438,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### Vector2D
 
-*In module `zerolan.data.pipeline.ocr`*
+*In module `zerolan.data.pipeline.ocr`*.
 
 
     Represents a two-dimensional vector.
@@ -440,7 +452,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### TTSPrediction
 
-*In module `zerolan.data.pipeline.tts`*
+*In module `zerolan.data.pipeline.tts`*.
 
 
     Represents a Text-to-Speech (TTS) result.
@@ -455,7 +467,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### TTSQuery
 
-*In module `zerolan.data.pipeline.tts`*
+*In module `zerolan.data.pipeline.tts`*.
 
 
     Represents a Text-to-Speech (TTS) query.
@@ -475,7 +487,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### TTSStreamPrediction
 
-*In module `zerolan.data.pipeline.tts`*
+*In module `zerolan.data.pipeline.tts`*.
 
 
     Represents a stream Text-to-Speech (TTS) result.
@@ -502,7 +514,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### VidCapPrediction
 
-*In module `zerolan.data.pipeline.vid_cap`*
+*In module `zerolan.data.pipeline.vid_cap`*.
 
 
     Prediction result for video captioning model.
@@ -517,7 +529,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### VidCapQuery
 
-*In module `zerolan.data.pipeline.vid_cap`*
+*In module `zerolan.data.pipeline.vid_cap`*.
 
 
     Query for video captioning model.
@@ -531,7 +543,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### PhoneAction
 
-*In module `zerolan.data.pipeline.vla`*
+*In module `zerolan.data.pipeline.vla`*.
 
 
     Represents an action to be performed on a phone environment.
@@ -547,7 +559,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### ShowUiPrediction
 
-*In module `zerolan.data.pipeline.vla`*
+*In module `zerolan.data.pipeline.vla`*.
 
 
     Represents a prediction result from the Show UI model.
@@ -561,7 +573,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### ShowUiQuery
 
-*In module `zerolan.data.pipeline.vla`*
+*In module `zerolan.data.pipeline.vla`*.
 
 
     Represents a query for the Show UI model.
@@ -579,7 +591,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### WebAction
 
-*In module `zerolan.data.pipeline.vla`*
+*In module `zerolan.data.pipeline.vla`*.
 
 
     Represents an action to be performed on a web environment.
@@ -597,7 +609,7 @@ Generated from the project `zerolan.data` by **AkagawaTsurunaki** at `2025-04-14
 
 ### ZerolanProtocol
 
-*In module `zerolan.data.protocol.protocol`*
+*In module `zerolan.data.protocol.protocol`*.
 
 
     Represents a message following the Zerolan protocol.
