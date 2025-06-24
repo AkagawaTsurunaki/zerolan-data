@@ -2,8 +2,7 @@
 
 ![Static Badge](https://img.shields.io/badge/Python-3.1x-blue) ![Static Badge](https://img.shields.io/badge/License-MIT-orange) ![Static Badge](https://img.shields.io/badge/ver-1.5.0-green)
 
-Define data classes used in [**ZerolanLiveRobot**](https://github.com/AkagawaTsurunaki/ZerolanLiveRobot) and [*
-*ZerolanCore**](https://github.com/AkagawaTsurunaki/zerolan-core).
+Define data classes used in [**ZerolanLiveRobot**](https://github.com/AkagawaTsurunaki/ZerolanLiveRobot) and [**ZerolanCore**](https://github.com/AkagawaTsurunaki/zerolan-core).
 
 All data classes inherits `pydantic.BaseModel` with strict schema validation.
 
